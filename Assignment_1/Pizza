@@ -1,0 +1,76 @@
+package SDP_Assignment_1;
+
+/*
+ * The Product Class - This is what we're building
+ * A Pizza with different ingredients and properties
+ */
+
+public class Pizza {
+    // All the parts of our pizza (final = cannot be changed after creation)
+    private final String size;
+    private final String crust;
+    private final boolean hasCheese;
+    private final boolean hasPepperoni;
+    private final boolean hasMushrooms;
+    private final boolean hasOlives;
+    private final String name;
+
+    // Package-private constructor - only PizzaBuilder can create a Pizza
+    // (not private because PizzaBuilder is in a separate file)
+    Pizza(String name, String size, String crust, boolean hasCheese,
+          boolean hasPepperoni, boolean hasMushrooms, boolean hasOlives) {
+        this.name = name;
+        this.size = size;
+        this.crust = crust;
+        this.hasCheese = hasCheese;
+        this.hasPepperoni = hasPepperoni;
+        this.hasMushrooms = hasMushrooms;
+        this.hasOlives = hasOlives;
+    }
+
+    // Methods to get pizza information (getters)
+    public String getSize() {
+        return size;
+    }
+
+    public String getCrust() {
+        return crust;
+    }
+
+    public boolean hasCheese() {
+        return hasCheese;
+    }
+
+    public boolean hasPepperoni() {
+        return hasPepperoni;
+    }
+
+    public boolean hasMushrooms() {
+        return hasMushrooms;
+    }
+
+    public boolean hasOlives() {
+        return hasOlives;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Method to display pizza details nicely
+    @Override
+    public String toString() {
+        StringBuilder description = new StringBuilder();
+        description.append(name).append(" Pizza:\n");
+        description.append("- Size: ").append(size).append("\n");
+        description.append("- Crust: ").append(crust).append("\n");
+        description.append("- Toppings: ");
+
+        if (hasCheese) description.append("Cheese ");
+        if (hasPepperoni) description.append("Pepperoni ");
+        if (hasMushrooms) description.append("Mushrooms ");
+        if (hasOlives) description.append("Olives ");
+
+        return description.toString();
+    }
+}
