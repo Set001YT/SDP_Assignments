@@ -1,0 +1,28 @@
+package SDP_Assignment_2_1;
+
+// Light fruit sorbet for health-conscious customers
+
+public class BerrySorbet implements IceCream {
+
+    @Override
+    public void prepare() {
+        System.out.println("Grinding fresh berries into puree...");
+        System.out.println("Adding a little sugar syrup");
+        System.out.println("Freezeing it slowly without cream.");
+    }
+
+    @Override
+    public double getPrice() {
+        return 220.0;
+    }
+
+    @Override
+    public String getName() {
+        return "Berry Sorbet";
+    }
+
+    @Override
+    public boolean hasNuts() {
+        return false; // fruit only, no allergens
+    }
+}
