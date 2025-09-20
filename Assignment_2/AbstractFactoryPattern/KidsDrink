@@ -1,0 +1,21 @@
+package SDP_Assignment_2_2;
+
+// Sweet drink to complement ice cream for kids
+
+public class KidsDrink implements DrinkPairing {
+    @Override
+    public void serve() {
+        System.out.println("Pouring a sweet milkshake");
+        System.out.println("Decorating with a straw and an umbrella");
+    }
+
+    @Override
+    public String getDrinkName() {
+        return "Strawberry milkshake";
+    }
+
+    @Override
+    public boolean isHot() {
+        return false; // cold drink for kids
+    }
+}
