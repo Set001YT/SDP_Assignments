@@ -1,0 +1,9 @@
+package SDP_Assignment_2_2;
+
+// Abstract product interface for ice cream base in combo sets
+
+public interface IceCreamBase {
+    void prepare();
+    String getBaseName();
+    int getCalories();
+}
