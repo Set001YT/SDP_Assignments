@@ -1,0 +1,28 @@
+package SDP_Assignment_2_1;
+
+// Classic vanilla ice cream - most popular choice
+
+public class CreamyVanilla implements IceCream {
+
+    @Override
+    public void prepare() {
+        System.out.println("Whipping cream with vanilla...");
+        System.out.println("Adding natural vanilla extract");
+        System.out.println("Freezeing it until the desired consistency is reached.");
+    }
+
+    @Override
+    public double getPrice() {
+        return 190.0; // price in rubles
+    }
+
+    @Override
+    public String getName() {
+        return "Creamy Vanilla";
+    }
+
+    @Override
+    public boolean hasNuts() {
+        return false; // no nuts - safe for allergic customers
+    }
+}
