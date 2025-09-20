@@ -1,0 +1,32 @@
+package SDP_Assignment_2_1;
+
+// Salesperson in ice cream shop - uses factory to serve customers
+
+public class IceCreamSeller {
+
+    public void serveCustomer(String orderFlavor) {
+        System.out.println("\n=== Serving the client ===");
+        System.out.println("Order: " + orderFlavor);
+
+        // Use factory to create ice cream
+        IceCream icecream = IceCreamFactory.makeIceCream(orderFlavor);
+
+        if (icecream == null) {
+            System.out.println("Maybe you'll choose something else?");
+            return;
+        }
+
+        // Prepare the order
+        System.out.println("\nPreparing: " + icecream.getName());
+        icecream.prepare();
+
+        // Warn about allergens
+        if (icecream.hasNuts()) {
+            System.out.println(" WARNING: Contains nuts!");
+        }
+
+        // Calculate cost
+        System.out.println("Price: " + icecream.getPrice() + " tenge");
+        System.out.println("Your order is ready! Enjoy your meal!");
+    }
+}
