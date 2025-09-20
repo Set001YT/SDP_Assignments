@@ -1,0 +1,20 @@
+package SDP_Assignment_2_2;
+
+// Concrete factory for premium gourmet combo sets
+
+public class PremiumComboFactory extends IceCreamComboFactory {
+    @Override
+    public IceCreamBase createIceCreamBase() {
+        return new PremiumIceCreamBase();
+    }
+
+    @Override
+    public Topping createTopping() {
+        return new PremiumTopping();
+    }
+
+    @Override
+    public DrinkPairing createDrink() {
+        return new PremiumDrink();
+    }
+}
