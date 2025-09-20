@@ -1,0 +1,44 @@
+package SDP_Assignment_2_2;
+
+// Cashier who offers ready-made combo sets using abstract factory
+
+public class ComboOrderManager {
+    private IceCreamComboFactory factory;
+
+    public ComboOrderManager(IceCreamComboFactory comboFactory) {
+        this.factory = comboFactory;
+    }
+
+    public void prepareComboOrder() {
+        System.out.println("=== Preparing a combo set ===");
+
+        // Create all combo components through factory
+        IceCreamBase base = factory.createIceCreamBase();
+        Topping topping = factory.createTopping();
+        DrinkPairing drink = factory.createDrink();
+
+        // Prepare order step by step
+        System.out.println("\n1. Preparing the base:");
+        System.out.println("→ " + base.getBaseName());
+        base.prepare();
+
+        System.out.println("\n2. Adding toppings:");
+        System.out.println("→ " + topping.getToppingName());
+        topping.addTopping();
+
+        System.out.println("\n3. Serving a drink:");
+        System.out.println("→ " + drink.getDrinkName());
+        if (drink.isHot()) {
+            System.out.println(" Hot Drink");
+        } else {
+            System.out.println(" Cold Drink");
+        }
+        drink.serve();
+
+        // Calculate total cost
+        double totalPrice = 200.0 + topping.getExtraPrice(); // base price + topping
+        System.out.println("\n Total: " + totalPrice + " tenge");
+        System.out.println(" Calories: " + base.getCalories() + " kcal");
+        System.out.println(" Your combo is ready!\n");
+    }
+}
