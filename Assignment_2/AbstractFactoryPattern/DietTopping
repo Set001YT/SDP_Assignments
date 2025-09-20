@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Healthy superfoods as toppings
+
+public class DietTopping implements Topping {
+    @Override
+    public void addTopping() {
+        System.out.println("Adding fresh goji berries");
+        System.out.println("Sprinkling with chia seeds");
+        System.out.println("Garnishing with mint leaves");
+    }
+
+    @Override
+    public String getToppingName() {
+        return "Superfood mix";
+    }
+
+    @Override
+    public double getExtraPrice() {
+        return 120.0;
+    }
+}
