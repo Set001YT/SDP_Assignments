@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Exquisite hot beverage to create temperature contrast
+
+public class PremiumDrink implements DrinkPairing {
+    @Override
+    public void serve() {
+        System.out.println("Making espresso with Arabica beans");
+        System.out.println("Serving in a porcelain cup");
+        System.out.println("The contrast of hot and cold is perfect!");
+    }
+
+    @Override
+    public String getDrinkName() {
+        return "Espresso from Jamaican beans";
+    }
+
+    @Override
+    public boolean isHot() {
+        return true; // hot coffee creates perfect contrast
+    }
+}
