@@ -1,0 +1,10 @@
+package SDP_Assignment_2_1;
+
+// Base interface for all ice cream types in Factory Pattern
+
+public interface IceCream {
+    void prepare();      // how the ice cream is prepared
+    double getPrice();   // price per serving
+    String getName();    // ice cream name
+    boolean hasNuts();   // contains nuts (for allergy info)
+}
