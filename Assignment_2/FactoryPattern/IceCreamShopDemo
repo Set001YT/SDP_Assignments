@@ -1,0 +1,15 @@
+package SDP_Assignment_2_1;
+
+// Demonstration of Factory Pattern in ice cream shop
+public class IceCreamShopDemo {
+    public static void main(String[] args) {
+        IceCreamSeller seller = new IceCreamSeller();
+
+        // Разные клиенты делают заказы
+        seller.serveCustomer("ваниль");
+        seller.serveCustomer("chocolate");
+        seller.serveCustomer("орехи");
+        seller.serveCustomer("ягоды");
+        seller.serveCustomer("мятное");    // this flavor is not on menu
+    }
+}
