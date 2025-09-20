@@ -1,0 +1,23 @@
+package SDP_Assignment_2_1;
+
+// Factory class that creates different ice cream objects based on customer request
+
+public class IceCreamFactory {
+
+    // Main factory method - creates ice cream by flavor name
+    public static IceCream makeIceCream(String flavor) {
+
+        // Check what customer ordered and create corresponding object
+        return switch (flavor.toLowerCase()) {
+            case "vanilla", "ваниль", "сливочное" -> new CreamyVanilla();
+            case "chocolate", "шоколад", "шоколадное" -> new ChocolateDelight();
+            case "nuts", "орехи", "ореховое" -> new NuttyCaramel();
+            case "berry", "ягоды", "сорбет" -> new BerrySorbet();
+            default -> {
+                // If customer ordered something unknown
+                System.out.println("Sorry, " + flavor + " we don't have it today :(");
+                yield null;
+            }
+        };
+    }
+}
