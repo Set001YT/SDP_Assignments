@@ -1,0 +1,28 @@
+package SDP_Assignment_2_1;
+
+// Rich chocolate ice cream with cocoa
+
+public class ChocolateDelight implements IceCream {
+
+    @Override
+    public void prepare() {
+        System.out.println("Melting dark chocolate...");
+        System.out.println("Mixing it with a milk base");
+        System.out.println("Adding cocoa powder for richness.");
+    }
+
+    @Override
+    public double getPrice() {
+        return 210.0;
+    }
+
+    @Override
+    public String getName() {
+        return "Chocolate Delight";
+    }
+
+    @Override
+    public boolean hasNuts() {
+        return false; // pure chocolate, no nuts
+    }
+}
