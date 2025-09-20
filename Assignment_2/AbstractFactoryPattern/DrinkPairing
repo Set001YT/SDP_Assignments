@@ -1,0 +1,9 @@
+package SDP_Assignment_2_2;
+
+// Abstract product interface for drinks that pair with ice cream
+
+public interface DrinkPairing {
+    void serve();
+    String getDrinkName();
+    boolean isHot(); // hot or cold drink
+}
