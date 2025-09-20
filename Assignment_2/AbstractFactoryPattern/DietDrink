@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Healthy warm drink that aids digestion
+
+public class DietDrink implements DrinkPairing {
+    @Override
+    public void serve() {
+        System.out.println("Brewing matcha green tea");
+        System.out.println("Adding lemon and honey");
+        System.out.println("Serving warm – great for digestion");
+    }
+
+    @Override
+    public String getDrinkName() {
+        return "Detox tea with matcha";
+    }
+
+    @Override
+    public boolean isHot() {
+        return true; // warm tea helps digestion
+    }
+}
