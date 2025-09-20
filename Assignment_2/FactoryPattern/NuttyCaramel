@@ -1,0 +1,28 @@
+package SDP_Assignment_2_1;
+
+// Caramel ice cream with mixed nuts - allergy warning needed!
+
+public class NuttyCaramel implements IceCream {
+
+    @Override
+    public void prepare() {
+        System.out.println("Preparing the caramel base...");
+        System.out.println("Grinding walnuts and almonds");
+        System.out.println("Carefully mixing the nuts into the mixture.");
+    }
+
+    @Override
+    public double getPrice() {
+        return 320.0; // more expensive due to premium nuts
+    }
+
+    @Override
+    public String getName() {
+        return "Nutty Caramel";
+    }
+
+    @Override
+    public boolean hasNuts() {
+        return true; // WARNING: contains nuts!
+    }
+}
