@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Lots of sweet toppings that children love
+
+public class KidsTopping implements Topping {
+    @Override
+    public void addTopping() {
+        System.out.println("Sprinkling in colored candies and marshmallows.");
+        System.out.println("Adding chocolate chips");
+        System.out.println("Pouring strawberry syrup on it");
+    }
+
+    @Override
+    public String getToppingName() {
+        return "Children's set of sweets";
+    }
+
+    @Override
+    public double getExtraPrice() {
+        return 80.0;
+    }
+}
