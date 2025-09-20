@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Exquisite ice cream made from high-quality ingredients
+
+public class PremiumIceCreamBase implements IceCreamBase {
+    @Override
+    public void prepare() {
+        System.out.println("Making it from selected cream with 35% fat content.");
+        System.out.println("Adding real Madagascar vanilla");
+        System.out.println("Serving in a chilled bowl.");
+    }
+
+    @Override
+    public String getBaseName() {
+        return "Premium Crème Brulee Ice Cream";
+    }
+
+    @Override
+    public int getCalories() {
+        return 280; // rich and nutritious
+    }
+}
