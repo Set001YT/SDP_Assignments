@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Low-calorie ice cream for health-conscious customers
+
+public class DietIceCreamBase implements IceCreamBase {
+    @Override
+    public void prepare() {
+        System.out.println("Using skim milk");
+        System.out.println("Using stevia, a natural sweetener");
+        System.out.println("Adding lots of fresh fruit");
+    }
+
+    @Override
+    public String getBaseName() {
+        return "Fitness ice cream with fruit";
+    }
+
+    @Override
+    public int getCalories() {
+        return 95; // very low calories
+    }
+}
