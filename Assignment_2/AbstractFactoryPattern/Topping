@@ -1,0 +1,9 @@
+package SDP_Assignment_2_2;
+
+// Abstract product interface for toppings in combo sets
+
+public interface Topping {
+    void addTopping();
+    String getToppingName();
+    double getExtraPrice();
+}
