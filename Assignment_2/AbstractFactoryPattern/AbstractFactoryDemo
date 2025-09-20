@@ -1,0 +1,23 @@
+package SDP_Assignment_2_2;
+
+// Demonstration of Abstract Factory Pattern with different combo sets
+
+public class AbstractFactoryDemo {
+    public static void main(String[] args) {
+
+        // Kids birthday party
+        System.out.println(" CHILDREN'S COMBO ");
+        ComboOrderManager kidsOrder = new ComboOrderManager(new KidsComboFactory());
+        kidsOrder.prepareComboOrder();
+
+        // Rich dinner
+        System.out.println(" PREMIUM COMBO ");
+        ComboOrderManager premiumOrder = new ComboOrderManager(new PremiumComboFactory());
+        premiumOrder.prepareComboOrder();
+
+        // Fitness diet
+        System.out.println(" DIET COMBO ");
+        ComboOrderManager dietOrder = new ComboOrderManager(new DietComboFactory());
+        dietOrder.prepareComboOrder();
+    }
+}
