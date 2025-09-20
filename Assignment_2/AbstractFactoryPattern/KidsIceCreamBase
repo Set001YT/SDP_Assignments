@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Simple ice cream for children - bright and sweet
+
+public class KidsIceCreamBase implements IceCreamBase {
+    @Override
+    public void prepare() {
+        System.out.println("Preparing a smaller portion - for children.");
+        System.out.println("Adding a lot of sweet syrup");
+        System.out.println("Decorating with colorful sprinkles");
+    }
+
+    @Override
+    public String getBaseName() {
+        return "Children's rainbow ice cream";
+    }
+
+    @Override
+    public int getCalories() {
+        return 180; // smaller portion for kids
+    }
+}
