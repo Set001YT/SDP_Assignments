@@ -1,0 +1,20 @@
+package SDP_Assignment_2_2;
+
+// Concrete factory for children's combo sets
+
+public class KidsComboFactory extends IceCreamComboFactory {
+    @Override
+    public IceCreamBase createIceCreamBase() {
+        return new KidsIceCreamBase();
+    }
+
+    @Override
+    public Topping createTopping() {
+        return new KidsTopping();
+    }
+
+    @Override
+    public DrinkPairing createDrink() {
+        return new KidsDrink();
+    }
+}
