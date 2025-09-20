@@ -1,0 +1,20 @@
+package SDP_Assignment_2_2;
+
+// Concrete factory for healthy diet combo sets
+
+public class DietComboFactory extends IceCreamComboFactory {
+    @Override
+    public IceCreamBase createIceCreamBase() {
+        return new DietIceCreamBase();
+    }
+
+    @Override
+    public Topping createTopping() {
+        return new DietTopping();
+    }
+
+    @Override
+    public DrinkPairing createDrink() {
+        return new DietDrink();
+    }
+}
