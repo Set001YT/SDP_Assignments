@@ -1,0 +1,22 @@
+package SDP_Assignment_2_2;
+
+// Expensive gourmet toppings for sophisticated taste
+
+public class PremiumTopping implements Topping {
+    @Override
+    public void addTopping() {
+        System.out.println("Sprinkling with crushed macarons");
+        System.out.println("Adding golden pecans");
+        System.out.println("Drizzling with real Belgian chocolate");
+    }
+
+    @Override
+    public String getToppingName() {
+        return "Gourmet Macaron Set";
+    }
+
+    @Override
+    public double getExtraPrice() {
+        return 250.0; // expensive but delicious
+    }
+}
