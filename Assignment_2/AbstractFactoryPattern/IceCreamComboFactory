@@ -1,0 +1,9 @@
+package SDP_Assignment_2_2;
+
+// Abstract factory that creates families of related products
+
+public abstract class IceCreamComboFactory {
+    public abstract IceCreamBase createIceCreamBase();
+    public abstract Topping createTopping();
+    public abstract DrinkPairing createDrink();
+}
