@@ -1,0 +1,21 @@
+package SDP_Assignment_3;
+
+// Client - main media player
+class AudioPlayer implements MediaPlayer {
+    MediaAdapter mediaAdapter;
+
+    public void play(String audioType, String fileName) {
+        // Built-in mp3 support
+        if (audioType.equalsIgnoreCase("mp3")) {
+            System.out.println("Воспроизводится mp3 файл: " + fileName);
+        }
+        // Use an adapter for other formats
+        else if (audioType.equalsIgnoreCase("vlc") ||
+                audioType.equalsIgnoreCase("mp4")) {
+            mediaAdapter = new MediaAdapter(audioType);
+            mediaAdapter.play(audioType, fileName);
+        } else {
+            System.out.println("Format " + audioType + " is not supported");
+        }
+    }
+}
