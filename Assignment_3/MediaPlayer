@@ -1,0 +1,6 @@
+package SDP_Assignment_3;
+
+// Target - the interface that the client expects
+interface MediaPlayer {
+    void play(String audioType, String fileName);
+}
