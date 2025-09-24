@@ -1,0 +1,11 @@
+package SDP_Assignment_3;
+
+class Mp4Player implements AdvancedMediaPlayer {
+    public void playVlc(String fileName) {
+        // MP4 player does not support VLC
+    }
+
+    public void playMp4(String fileName) {
+        System.out.println("Воспроизводится mp4 файл: " + fileName);
+    }
+}
