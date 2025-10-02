@@ -1,0 +1,42 @@
+package SDP_Assignment_4;
+
+//Main class to demonstrate the Bridge pattern.
+public class NotificationBridgeDemo {
+
+    /*
+     * Program entry point.
+     * Demonstrates the Bridge pattern in action.
+     */
+
+    public static void main(String[] args) {
+
+        // Create different sending methods
+        MessageSender emailSender = new EmailSender();
+        MessageSender smsSender = new SmsSender();
+        MessageSender pushSender = new PushSender();
+
+        System.out.println("EXAMPLE 1: Simple notification via Email");
+        Notification simpleEmail = new SimpleNotification(emailSender, "Your order is accepted");
+        simpleEmail.notify("user@example.com");
+
+        System.out.println("EXAMPLE 2: Simple notification via SMS");
+        Notification simpleSms = new SimpleNotification(smsSender, "Your order is accepted");
+        simpleSms.notify("+77001234567");
+
+        System.out.println("EXAMPLE 3: Urgent notification via Push");
+        Notification urgentPush = new UrgentNotification(pushSender, "Your card is blocked");
+        urgentPush.notify("user_12345");
+
+        System.out.println("EXAMPLE 4: Urgent notification via SMS");
+        Notification urgentSms = new UrgentNotification(smsSender, "Confirm login to the system");
+        urgentSms.notify("+77001234567");
+
+        System.out.println("EXAMPLE 5: Reminder via Email");
+        Notification reminderEmail = new ReminderNotification(emailSender, "Meeting with client", "15:00");
+        reminderEmail.notify("manager@company.com");
+
+        System.out.println("EXAMPLE 6: Reminder via Push");
+        Notification reminderPush = new ReminderNotification(pushSender, "Pay the bill", "10:00");
+        reminderPush.notify("user_67890");
+    }
+}
