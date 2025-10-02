@@ -1,0 +1,35 @@
+package SDP_Assignment_4;
+
+/*
+ * Concrete notification type - simple informational message. Extends for classes!
+ */
+class SimpleNotification extends Notification {
+
+    private String message;
+
+    /*
+     * Creates a simple notification.
+     * MessageSender sender - sending method
+     * String message - message text
+     */
+
+    public SimpleNotification(MessageSender sender, String message) {
+        super(sender);
+        this.message = message;
+    }
+
+    /*
+     * Sends a simple notification to the recipient.
+     * String recipient - message receiver
+     */
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined notify method from Notification class
+     */
+
+    @Override
+    public void notify(String recipient) {
+        sender.send(recipient, message);
+    }
+}
