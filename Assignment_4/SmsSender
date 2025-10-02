@@ -1,0 +1,25 @@
+package SDP_Assignment_4;
+
+// Concrete implementation - sending via SMS. Implements for interface!
+class SmsSender implements MessageSender {
+
+    /*
+     * This class sends an SMS message.
+     * String recipient - receiver's phone number
+     * String message - SMS text
+     */
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined send method from MessageSender interface
+     */
+
+    @Override
+    public void send(String recipient, String message) {
+        System.out.println(" SMS ");
+        System.out.println("Number: " + recipient);
+        System.out.println("Text: " + message);
+        System.out.println("SMS sent!");
+        System.out.println();
+    }
+}
