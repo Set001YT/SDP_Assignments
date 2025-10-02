@@ -1,0 +1,14 @@
+package SDP_Assignment_4;
+
+/*
+ * Interface for message sending methods.
+ * This is a bridge between abstraction (notification type) and implementation (sending method).
+ */
+interface MessageSender {
+    /*
+     * Sends a message to the specified recipient.
+     * String recipient -  message receiver (email, phone number, etc.)
+     * String message -  message text
+     */
+    void send(String recipient, String message);
+}
