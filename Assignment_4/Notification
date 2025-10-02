@@ -1,0 +1,32 @@
+package SDP_Assignment_4;
+
+/*
+ * Notification - base class for all notification types.
+ * Contains a reference to MessageSender - this is the "bridge".
+ */
+
+abstract class Notification {
+
+    /*
+     * Message sending method.
+     * This is the bridge to implementation!
+     */
+
+    protected MessageSender sender;
+
+    /*
+     * Constructor accepts the sending method.
+     * Sender - object that knows HOW to send a message
+     */
+    public Notification(MessageSender sender) {
+        this.sender = sender;
+    }
+
+    /*
+     * Abstract method for sending notification.
+     * Each notification type implements it differently.
+     * String recipient - notification receiver
+     */
+
+    public abstract void notify(String recipient);
+}
