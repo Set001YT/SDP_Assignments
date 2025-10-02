@@ -1,0 +1,26 @@
+package SDP_Assignment_4;
+
+//Concrete implementation - sending via Email. Implements for interface!
+
+class EmailSender implements MessageSender {
+
+    /*
+     * This class sends a message via email.
+     * String recipient -  receiver's email address
+     * String message - email text
+     */
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined send method from MessageSender interface
+     */
+
+    @Override
+    public void send(String recipient, String message) {
+        System.out.println(" EMAIL ");
+        System.out.println("To: " + recipient);
+        System.out.println("Message: " + message);
+        System.out.println("Sent via Email!");
+        System.out.println();
+    }
+}
