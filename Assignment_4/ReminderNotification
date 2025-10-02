@@ -1,0 +1,38 @@
+package SDP_Assignment_4;
+
+//Concrete notification type - reminder. Extends for classes!
+
+class ReminderNotification extends Notification {
+
+    private String message;
+    private String time;
+
+    /*
+     * Creates a reminder notification.
+     * MessageSender sender - sending method
+     * String message - reminder text
+     * String time - reminder time
+     */
+
+    public ReminderNotification(MessageSender sender, String message, String time) {
+        super(sender);
+        this.message = message;
+        this.time = time;
+    }
+
+    /*
+     * Sends a reminder with time indication.
+     * @param recipient - message receiver
+     */
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined notify method from Notification class
+     */
+
+    @Override
+    public void notify(String recipient) {
+        String reminderMessage = "Reminder at " + time + ": " + message;
+        sender.send(recipient, reminderMessage);
+    }
+}
