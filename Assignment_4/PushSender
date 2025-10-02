@@ -1,0 +1,26 @@
+package SDP_Assignment_4;
+
+//Concrete implementation - sending via Push notifications. Implements for interface!
+
+class PushSender implements MessageSender {
+
+    /*
+     * This class sends a push notification to the app.
+     * String recipient - user ID in the application
+     * String message - notification text
+     */
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined send method from MessageSender interface
+     */
+
+    @Override
+    public void send(String recipient, String message) {
+        System.out.println(" PUSH NOTIFICATION ");
+        System.out.println("UserID: " + recipient);
+        System.out.println("Notification: " + message);
+        System.out.println("Push sent!");
+        System.out.println();
+    }
+}
