@@ -1,0 +1,34 @@
+package SDP_Assignment_4;
+
+//Concrete notification type - urgent notification with priority. Extends for classes!
+class UrgentNotification extends Notification {
+
+    private String message;
+
+    /*
+     * Creates an urgent notification.
+     * Message sender sending method
+     * String message - message text
+     */
+    public UrgentNotification(MessageSender sender, String message) {
+        super(sender);
+        this.message = message;
+    }
+
+    /*
+     * Sends an urgent notification with importance marker.
+     * String recipient - message receiver
+     */
+
+
+    /*
+     * Override is used when we rewrite (redo, redefine) an existing method.
+     * In my case, I redefined notify method from Notification class
+     */
+
+    @Override
+    public void notify(String recipient) {
+        String urgentMessage = "!!! URGENT !!! " + message;
+        sender.send(recipient, urgentMessage);
+    }
+}
