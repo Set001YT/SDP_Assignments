@@ -1,0 +1,10 @@
+package SDP_Assignment_5;
+
+//Part of Decorator Pattern
+
+// Basic Book interface
+
+interface Book {
+    String getDescription();
+    double getRentalPrice();
+}
