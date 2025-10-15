@@ -10,7 +10,7 @@ class HighlighterDecorator extends BookDecorator {
     }
 
     public String getDescription() {
-        return book.getDescription() + " with highlighter(marker for notes)";
+        return book.getDescription() + " + with highlighter(marker for notes)";
     }
 
     public double getRentalPrice() {
