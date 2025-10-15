@@ -10,7 +10,7 @@ class ProtectiveCoverDecorator extends BookDecorator {
     }
 
     public String getDescription() {
-        return book.getDescription() + " in a protective cover ";
+        return book.getDescription() + "+ in a protective cover ";
     }
 
     public double getRentalPrice() {
