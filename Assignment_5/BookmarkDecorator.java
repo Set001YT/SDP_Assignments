@@ -10,7 +10,7 @@ class BookmarkDecorator extends BookDecorator {
     }
 
     public String getDescription() {
-        return book.getDescription() + " with bookmark ";
+        return book.getDescription() + " + with bookmark ";
     }
 
     public double getRentalPrice() {
