@@ -1,0 +1,44 @@
+package SDP_Assignment_6;
+
+// Demo (client)
+public class DeliverySystemDemo {
+    public static void main(String[] args) {
+        System.out.println("========================================");
+        System.out.println("DELIVERY MANAGEMENT SYSTEM");
+        System.out.println("========================================");
+
+        Order order = new Order("ORD-2024-001", 25, 5, "Asset Iglikov");
+
+        System.out.println("\nExample 1: Courier Delivery");
+        order.setDeliveryStrategy(new CourierDelivery());
+        order.processOrder();
+
+        System.out.println("\nExample 2: Post Delivery");
+        order.setDeliveryStrategy(new PostDelivery());
+        order.processOrder();
+
+        System.out.println("\nExample 3: Pickup");
+        order.setDeliveryStrategy(new PickupDelivery());
+        order.processOrder();
+
+        System.out.println("\nExample 4: Express Delivery");
+        order.setDeliveryStrategy(new ExpressDelivery());
+        order.processOrder();
+
+        System.out.println("\nExample 5: Comparing All Options");
+        DeliveryStrategy[] allStrategies = {
+                new CourierDelivery(),
+                new PostDelivery(),
+                new PickupDelivery(),
+                new ExpressDelivery()
+        };
+        order.compareOptions(allStrategies);
+
+        System.out.println("\nExample 6: Express Delivery Error (long distance)");
+        Order longOrder = new Order("ORD-2024-002", 100, 3, "Moldir Omar");
+        longOrder.setDeliveryStrategy(new ExpressDelivery());
+        longOrder.processOrder();
+
+
+    }
+}
