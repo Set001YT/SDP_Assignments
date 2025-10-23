@@ -1,0 +1,9 @@
+package SDP_Assignment_6;
+
+
+// Strategy Interface
+interface DeliveryStrategy {
+    double calculateCost(int distance, int weight);
+    String getDeliveryTime(int distance);
+    String getName();
+}
