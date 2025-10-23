@@ -1,0 +1,93 @@
+package SDP_Assignment_6;
+
+// Context
+class Order {
+    private DeliveryStrategy deliveryStrategy;
+    private String orderId;
+    private int distance;
+    private int weight;
+    private String customerName;
+
+    public Order(String orderId, int distance, int weight, String customerName) {
+        this.orderId = orderId;
+        this.distance = distance;
+        this.weight = weight;
+        this.customerName = customerName;
+    }
+
+    public void setDeliveryStrategy(DeliveryStrategy deliveryStrategy) {
+        this.deliveryStrategy = deliveryStrategy;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void processOrder() {
+        if (deliveryStrategy == null) {
+            System.out.println("Error: Delivery strategy not set");
+            return;
+        }
+
+        try {
+            double cost = deliveryStrategy.calculateCost(distance, weight);
+            String time = deliveryStrategy.getDeliveryTime(distance);
+
+            System.out.println("\n========================================");
+            System.out.println("ORDER DETAILS");
+            System.out.println("========================================");
+            System.out.println("Order ID: " + orderId);
+            System.out.println("Customer: " + customerName);
+            System.out.println("Delivery Type: " + deliveryStrategy.getName());
+            System.out.println("----------------------------------------");
+            System.out.println("Distance: " + distance + " km");
+            System.out.println("Weight: " + weight + " kg");
+            System.out.println("----------------------------------------");
+            System.out.println("Delivery Cost: " + cost + " ₸");
+            System.out.println("Delivery Time: " + time);
+            System.out.println("========================================\n");
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("\nError: " + e.getMessage() + "\n");
+        }
+    }
+
+    public void compareOptions(DeliveryStrategy[] strategies) {
+        System.out.println("\n========================================");
+        System.out.println("COMPARING DELIVERY OPTIONS");
+        System.out.println("========================================\n");
+
+        for (DeliveryStrategy strategy : strategies) {
+            setDeliveryStrategy(strategy);
+            processOrder();
+        }
+    }
+}
