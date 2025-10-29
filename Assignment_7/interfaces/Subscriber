@@ -1,0 +1,7 @@
+package interfaces;
+
+// Observer interface - all subscribers must implement this
+public interface Subscriber {
+    void update(String articleTitle, String articleContent);
+    String getEmail();
+}
