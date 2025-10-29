@@ -1,0 +1,37 @@
+package demo;
+
+import interfaces.*;
+import concrete_things.*;
+
+// Demo class
+class NewsletterDemo {
+    public static void main(String[] args) {
+        // Create blog
+        TechBlog blog = new TechBlog();
+
+        // Create subscribers
+        Subscriber asset = new EmailSubscriber("Asset Iglikov", "asset@email.com");
+        Subscriber denis = new EmailSubscriber("Denis Shin", "denis@email.com");
+        Subscriber alisher = new PremiumSubscriber("Alisher Abushemenov", "alisher@email.com", true);
+
+        // Subscribe to blog
+        blog.subscribe(asset);
+        blog.subscribe(denis);
+        blog.subscribe(alisher);
+
+        // Publish first article
+        blog.publishArticle(
+                "Introduction to our website",
+                "Welcome to our website(example.com/news) and congratulations on its launch! Learn more..."
+        );
+
+        // Sarah unsubscribes
+        blog.unsubscribe(alisher);
+
+        // Publish second article
+        blog.publishArticle(
+                "Types of our subscribers",
+                "Two subscriber types have been added to our website: Email and Premium. Learn more..."
+        );
+    }
+}
