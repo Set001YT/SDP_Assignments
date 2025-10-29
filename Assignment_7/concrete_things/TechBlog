@@ -1,0 +1,47 @@
+package concrete_things;
+
+import interfaces.*;
+import java.util.*;
+
+// Concrete Subject - Blog that publishes articles
+public class TechBlog implements Blog {
+    private List<Subscriber> subscribers;
+    private String latestArticleTitle;
+    private String latestArticleContent;
+
+    public TechBlog() {
+        subscribers = new ArrayList<>();
+    }
+
+    public void setSubscribers(List<Subscriber> subscribers) {
+        this.subscribers = subscribers;
+    }
+
+    @Override
+    public void subscribe(Subscriber subscriber) {
+        subscribers.add(subscriber);
+        System.out.println(subscriber.getEmail() + " subscribed successfully!\n");
+    }
+
+    @Override
+    public void unsubscribe(Subscriber subscriber) {
+        subscribers.remove(subscriber);
+        System.out.println(subscriber.getEmail() + " unsubscribed\n");
+    }
+
+    @Override
+    public void notifySubscribers() {
+        System.out.println("Sending notifications to " + subscribers.size() + " subscribers...\n");
+        for (Subscriber subscriber : subscribers) {
+            subscriber.update(latestArticleTitle, latestArticleContent);
+        }
+    }
+
+    // When new article is published, notify all subscribers
+    public void publishArticle(String title, String content) {
+        System.out.println("=== NEW ARTICLE PUBLISHED ===");
+        this.latestArticleTitle = title;
+        this.latestArticleContent = content;
+        notifySubscribers();
+    }
+}
