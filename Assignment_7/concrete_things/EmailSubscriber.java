@@ -12,17 +12,9 @@ public class EmailSubscriber implements Subscriber {
         this.email = email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
     @Override
-    public void update(String articleTitle, String articleContent) {
-        sendEmail(articleTitle, articleContent);
+    public void update(String blogName, String articleTitle, String articleContent) {
+        sendEmail(blogName, articleTitle, articleContent);
     }
 
     @Override
@@ -30,9 +22,10 @@ public class EmailSubscriber implements Subscriber {
         return email;
     }
 
-    private void sendEmail(String title, String content) {
-        System.out.println(" Email sent to: " + name + " (" + email + ")");
-        System.out.println(" Subject: New Article - " + title);
+    private void sendEmail(String blogName, String title, String content) {
+        System.out.println(" Email to: " + name + " (" + email + ")");
+        System.out.println(" From: " + blogName);
+        System.out.println(" Subject: " + title);
         System.out.println(" Preview: " + content.substring(0, Math.min(50, content.length())) + "...\n");
     }
 }
