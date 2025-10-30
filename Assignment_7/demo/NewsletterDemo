@@ -6,32 +6,54 @@ import concrete_things.*;
 // Demo class
 class NewsletterDemo {
     public static void main(String[] args) {
-        // Create blog
-        TechBlog blog = new TechBlog();
+        // Create two different blogs
+        TechBlog techBlog = new TechBlog();
+        FoodBlog foodBlog = new FoodBlog();
 
         // Create subscribers
         Subscriber asset = new EmailSubscriber("Asset Iglikov", "asset@email.com");
-        Subscriber denis = new EmailSubscriber("Denis Shin", "denis@email.com");
-        Subscriber alisher = new PremiumSubscriber("Alisher Abushemenov", "alisher@email.com", true);
+        Subscriber rustem = new EmailSubscriber("Rustem Zhalelov", "rustem@email.com");
+        Subscriber rakhat = new PremiumSubscriber("Alice Dosmagambetov", "rakhat@email.com", true);
 
-        // Subscribe to blog
-        blog.subscribe(asset);
-        blog.subscribe(denis);
-        blog.subscribe(alisher);
+        // John subscribes to both blogs
+        techBlog.subscribe(asset);
+        foodBlog.subscribe(asset);
 
-        // Publish first article
-        blog.publishArticle(
-                "Introduction to our website",
-                "Welcome to our website(example.com/news) and congratulations on its launch! Learn more..."
+        // Sarah only subscribes to TechBlog
+        techBlog.subscribe(rustem);
+
+        // Alice subscribes to FoodBlog only
+        foodBlog.subscribe(rakhat);
+
+        System.out.println("========================================\n");
+
+        // TechBlog publishes article
+        techBlog.publishArticle(
+                "Introduction to AI era",
+                "AI is being rapidly implemented in all spheres of life around the world...."
         );
 
-        // Sarah unsubscribes
-        blog.unsubscribe(alisher);
+        // FoodBlog publishes recipe
+        foodBlog.publishRecipe(
+                "Homemade Pizza Recipe",
+                "Ingredients: flour, water, yeast, tomato sauce, mozzarella cheese..."
+        );
 
-        // Publish second article
-        blog.publishArticle(
-                "Types of our subscribers",
-                "Two subscriber types have been added to our website: Email and Premium. Learn more..."
+        System.out.println("========================================\n");
+
+        // Sarah unsubscribes from TechBlog
+        techBlog.unsubscribe(rustem);
+
+        // TechBlog publishes another article
+        techBlog.publishArticle(
+                "New iPhone 17!",
+                "Apple unveiled a new line of iPhone 17 smartphones...."
+        );
+
+        // FoodBlog publishes another recipe
+        foodBlog.publishRecipe(
+                "Chocolate Cake",
+                "A rich and moist chocolate cake with creamy frosting..."
         );
     }
 }
