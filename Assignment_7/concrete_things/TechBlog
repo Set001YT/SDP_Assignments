@@ -3,7 +3,7 @@ package concrete_things;
 import interfaces.*;
 import java.util.*;
 
-// Concrete Subject - Blog that publishes articles
+// Concrete Subject - Tech Blog
 public class TechBlog implements Blog {
     private List<Subscriber> subscribers;
     private String latestArticleTitle;
@@ -13,33 +13,33 @@ public class TechBlog implements Blog {
         subscribers = new ArrayList<>();
     }
 
-    public void setSubscribers(List<Subscriber> subscribers) {
-        this.subscribers = subscribers;
+    @Override
+    public String getBlogName() {
+        return "TechBlog";
     }
 
     @Override
     public void subscribe(Subscriber subscriber) {
         subscribers.add(subscriber);
-        System.out.println(subscriber.getEmail() + " subscribed successfully!\n");
+        System.out.println(subscriber.getEmail() + " subscribed to " + getBlogName() + "\n");
     }
 
     @Override
     public void unsubscribe(Subscriber subscriber) {
         subscribers.remove(subscriber);
-        System.out.println(subscriber.getEmail() + " unsubscribed\n");
+        System.out.println(subscriber.getEmail() + " unsubscribed from " + getBlogName() + "\n");
     }
 
     @Override
     public void notifySubscribers() {
-        System.out.println("Sending notifications to " + subscribers.size() + " subscribers...\n");
+        System.out.println("📢 " + getBlogName() + " sending to " + subscribers.size() + " subscribers...\n");
         for (Subscriber subscriber : subscribers) {
-            subscriber.update(latestArticleTitle, latestArticleContent);
+            subscriber.update(getBlogName(), latestArticleTitle, latestArticleContent);
         }
     }
 
-    // When new article is published, notify all subscribers
     public void publishArticle(String title, String content) {
-        System.out.println("=== NEW ARTICLE PUBLISHED ===");
+        System.out.println("=== " + getBlogName().toUpperCase() + " - NEW ARTICLE ===");
         this.latestArticleTitle = title;
         this.latestArticleContent = content;
         notifySubscribers();
