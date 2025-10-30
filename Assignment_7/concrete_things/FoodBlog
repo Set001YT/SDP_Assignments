@@ -1,0 +1,48 @@
+package concrete_things;
+
+import interfaces.*;
+import java.util.*;
+
+
+// Concrete Subject - Food Blog
+public class FoodBlog implements Blog {
+    private List<Subscriber> subscribers;
+    private String latestRecipeTitle;
+    private String latestRecipeContent;
+
+    public FoodBlog() {
+        subscribers = new ArrayList<>();
+    }
+
+    @Override
+    public String getBlogName() {
+        return "FoodBlog";
+    }
+
+    @Override
+    public void subscribe(Subscriber subscriber) {
+        subscribers.add(subscriber);
+        System.out.println(subscriber.getEmail() + " subscribed to " + getBlogName() + "\n");
+    }
+
+    @Override
+    public void unsubscribe(Subscriber subscriber) {
+        subscribers.remove(subscriber);
+        System.out.println(subscriber.getEmail() + " unsubscribed from " + getBlogName() + "\n");
+    }
+
+    @Override
+    public void notifySubscribers() {
+        System.out.println("📢 " + getBlogName() + " sending to " + subscribers.size() + " subscribers...\n");
+        for (Subscriber subscriber : subscribers) {
+            subscriber.update(getBlogName(), latestRecipeTitle, latestRecipeContent);
+        }
+    }
+
+    public void publishRecipe(String title, String content) {
+        System.out.println("=== " + getBlogName().toUpperCase() + " - NEW RECIPE ===");
+        this.latestRecipeTitle = title;
+        this.latestRecipeContent = content;
+        notifySubscribers();
+    }
+}
